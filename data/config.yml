@@ -1,0 +1,15 @@
+about:
+  type: markdown
+  icon: f7:doc-fill
+contact:
+  type: markdown
+  icon: f7:doc-fill
+projects:
+  icon: simple-line-icons:docs
+  type: folder
+  fields:
+    title: text
+    date: date
+    description: markdown
+    images: gallery
+media: filebrowser

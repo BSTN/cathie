@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.726.0",
     "@nuxt/fonts": "0.10.3",
     "@nuxtjs/mdc": "^0.12.1",
     "@nuxtjs/seo": "2.0.2",

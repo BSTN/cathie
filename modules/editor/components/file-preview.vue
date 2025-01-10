@@ -1,12 +1,16 @@
 <template>
   <div
-    class="group relative aspect-square cursor-pointer overflow-hidden rounded border border-solid border-bg text-fg"
+    class="group relative aspect-square cursor-pointer overflow-hidden text-fg"
     ref="el"
   >
-    <div class="" :class="{ invisible: !isVisible }">
+    <div :class="{ invisible: !isVisible }">
       <!-- preview/icon -->
       <div v-if="props.file.type === 'image'">
-        <TwicImg :src="`/${props.file.key}`" alt="file" />
+        <img
+          loading="lazy"
+          :src="`https://cathie.twic.pics/${props.file.Key}?twic=v1/cover=200x200`"
+          class="h-full w-full object-cover"
+        />
       </div>
       <div v-else-if="props.file.type === 'video'">
         <div
@@ -23,7 +27,7 @@
         </div>
       </div>
       <div v-else>
-        {{ props.file.key }}
+        {{ props.file.Key }}
         <div
           class="flexjustify-center absolute bottom-0 left-0 right-0 top-0 items-center text-6xl text-fg2"
         >
@@ -38,21 +42,11 @@
 </template>
 
 <script lang="ts" setup>
-// import { useElementBounding } from "@vueuse/core";
 import { useElementVisibility } from "@vueuse/core";
 import { Icon } from "@iconify/vue";
 const el = ref(null);
-// const { top } = useElementBounding(el);
 const isVisible = useElementVisibility(el);
 const props = defineProps(["file"]);
-const extension = computed(() => {
-  if (!props.file?.key && typeof props.file.key !== "string") return "";
-  return props.file.key.split(".").pop();
-});
-const basename = computed(() => {
-  if (!props.file?.key && typeof props.file.key !== "string") return "";
-  return props.file.key.split("/").pop();
-});
 </script>
 
 <style lang="less" scoped></style>

@@ -6,6 +6,7 @@ import {
   extendPages,
   addLayout,
   addImports,
+  addPlugin,
 } from "@nuxt/kit";
 
 const { resolve } = createResolver(import.meta.url);
@@ -13,7 +14,7 @@ const { resolve } = createResolver(import.meta.url);
 export default defineNuxtModule({
   setup() {
     // only run in dev mode
-    if (process.env.S3PATH) {
+    if (process.env.S3) {
       addComponentsDir({
         path: resolve("./editor/components"),
       });
@@ -31,6 +32,11 @@ export default defineNuxtModule({
         pages.push({
           name: "edit",
           path: "/edit",
+          file: resolve("./editor/edit.vue"),
+        });
+        pages.push({
+          name: "edit-page",
+          path: "/edit/:path*",
           file: resolve("./editor/edit.vue"),
         });
       });
