@@ -4,6 +4,7 @@ import indexing from "./indexing";
 import { s3Client } from "./s3client";
 import { ListObjectsV2Command } from "@aws-sdk/client-s3";
 import yaml from "yaml";
+import { getConfig } from "./editor-utils";
 
 function readableFileSize(attachmentSize: number) {
   const DEFAULT_SIZE = 0;
@@ -56,9 +57,6 @@ const getBucketFiles = async () => {
 // Usage
 export default defineEventHandler(async (event) => {
   const name = event.context.params?.path;
-  // test
-  if (name === "test") {
-  }
 
   // index
   if (name === "index") {
@@ -69,6 +67,67 @@ export default defineEventHandler(async (event) => {
       setResponseStatus(event, 404);
       return { error: "Could not list files.", err };
     }
+  }
+
+  if (name === "get") {
+    const query = getQuery(event);
+    const p = query.path;
+    const psplit = p.split("/");
+    if (psplit.length > 1) {
+      const filepath = resolve("./data/", p);
+      const data = yaml.parse(fs.readFileSync(filepath, "utf8"));
+      const timestamp = fs.statSync(filepath).mtime;
+      return { data, timestamp };
+    } else if (psplit.length === 1) {
+      const config = await getConfig();
+      const type = config[psplit[0]].type;
+      if (type === "yaml") {
+        const filepath = resolve(`./data/${p}.yml`);
+        const data = yaml.parse(fs.readFileSync(filepath, "utf8"));
+        const timestamp = fs.statSync(filepath).mtime;
+        return { data, timestamp };
+      } else if (type === "markdown") {
+        const filepath = resolve(`./data/${p}.md`);
+        const data = fs.readFileSync(filepath, "utf8");
+        const timestamp = fs.statSync(filepath).mtime;
+        return { data, timestamp };
+      } else {
+        return false;
+      }
+    } else {
+      setResponseStatus(event, 404);
+      return { error: "No path provided" };
+    }
+  }
+
+  if (name === "save") {
+    const body = JSON.parse(await readBody(event));
+    const data = body.data;
+    const path = body.path;
+    const config = await getConfig();
+    const p = path.split("/");
+    if (p.length > 1) {
+      const filepath = resolve("./data/", path);
+      fs.writeFileSync(filepath, yaml.stringify(data));
+      return { success: true };
+    } else if (p.length === 1) {
+      const type = config[p[0]].type;
+      if (type === "yaml") {
+        const filepath = resolve(`./data/${path}.yml`);
+        fs.writeFileSync(filepath, yaml.stringify(data));
+        return { success: true };
+      } else if (type === "markdown") {
+        const filepath = resolve(`./data/${path}.md`);
+        fs.writeFileSync(filepath, data);
+        return { success: true };
+      }
+    }
+    setResponseStatus(event, 404);
+    return { error: "No path provided" };
+  }
+  if (name === "config") {
+    const config = await getConfig();
+    return config;
   }
 
   setResponseStatus(event, 404);

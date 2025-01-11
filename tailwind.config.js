@@ -12,14 +12,22 @@ export default {
   ],
   theme: {
     fontFamily: {
-      mono: ['Menlo, Monaco, Consolas, "Courier New", monospace'],
+      mono: [
+        '"DejaVu sans code", Menlo, Monaco, Consolas, "Courier New", monospace',
+      ],
       main: [
-        '"Inter", ...defaultTheme.fontFamily.sans',
+        "Inter, ...defaultTheme.fontFamily.sans",
         {
           fontFeatureSettings: '"cv11", "ss01"',
           fontVariationSettings: '"opsz" 32',
         },
       ],
+    },
+    letterSpacing: {
+      extra: "var(--letterspacing, 0.02em)",
+    },
+    fontWeight: {
+      normal: 200,
     },
     screens: {
       sm: "640px",

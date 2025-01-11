@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed left-0 top-0 z-50 flex h-full w-full flex-row gap-8 bg-bg p-4 text-fg"
+    class="fixed left-0 top-0 z-[99] flex h-full w-full flex-row gap-8 bg-bg p-4 text-fg"
   >
     <div class="relative flex grow border border-solid border-bg1">
       <div

@@ -8,8 +8,11 @@ projects:
   icon: simple-line-icons:docs
   type: folder
   fields:
-    title: text
-    date: date
+    title:
+      type: text
+      label: "Title"
     description: markdown
     images: gallery
-media: filebrowser
+media:
+  type: filebrowser
+  icon: material-symbols-light:perm-media-rounded

@@ -1,33 +1,45 @@
 <template>
   <div
-    class="file-browser fixed bottom-0 left-0 right-0 top-0 overflow-auto bg-bg2 p-2"
+    class="file-browser fixed bottom-0 left-0 right-0 top-0 overflow-auto bg-bg1 p-0"
   >
     <!-- editor -->
     <transition name="fade">
-      <FileEditor
+      <EditFileEditor
         v-model="editing"
         v-if="editing"
         @next="openNext"
         @prev="openPrev"
-      ></FileEditor>
+      ></EditFileEditor>
     </transition>
 
     <!-- menu bar -->
     <div
-      class="sticky top-0 z-10 flex items-center gap-2 rounded-md bg-bg px-2 py-2"
+      class="sticky top-0 z-50 flex items-center gap-2 border-b border-bc bg-bg px-8 py-3"
     >
       <!-- <button class="rounded-md bg-bg2 p-1 px-3 text-fg">Folders</button> -->
       <input
         type="text"
-        class="rounded-md bg-bg2 p-1 px-3 text-fg placeholder-fg2 focus:outline-none focus:ring-0"
+        class="rounded-md border border-bg1 bg-bg1 px-4 py-2 text-fg placeholder-fg2 focus:border-bg2 focus:bg-bg2 focus:outline-none focus:ring-0"
         placeholder="Search..."
         ref="searchElement"
         @keydown.escape="$event.target.blur()"
         v-model="filterQuery"
       />
-      <button class="rounded-md bg-bg1 p-1 px-3 text-fg">Images</button>
-      <button class="rounded-md bg-bg1 p-1 px-3 text-fg">Videos</button>
-      <button class="rounded-md bg-bg1 p-1 px-3 text-fg">Other</button>
+      <button
+        class="rounded-md border border-bc px-4 py-2 text-sm text-fg2 hover:text-fg"
+      >
+        Images
+      </button>
+      <button
+        class="rounded-md border border-bc px-4 py-2 text-sm text-fg2 hover:text-fg"
+      >
+        Videos
+      </button>
+      <button
+        class="rounded-md border border-bc px-4 py-2 text-sm text-fg2 hover:text-fg"
+      >
+        Other
+      </button>
       <div class="grow"></div>
       <div class="rounded-md bg-bg1 p-1 px-3 text-f" v-if="selected.length > 0">
         {{ selected.length }}
@@ -40,13 +52,13 @@
         Deselect all
       </button>
     </div>
-    <div class="bg-bg2 p-2 px-0">
+    <div class="bg-bg p-8">
       <!-- the grid -->
       <div class="border-right grid w-full grid-cols-12 gap-2" v-if="ALLFILES">
         <!-- file -->
         <div
           v-for="file in filteredFiles"
-          class="group relative overflow-hidden rounded border border-solid border-bg"
+          class="group relative overflow-hidden rounded border border-solid border-bc"
           @click.meta="toggleSelected(file.Key)"
         >
           <!-- file: selected border -->
@@ -67,7 +79,7 @@
             <Icon icon="mdi:checkbox-marked" class="text-f" v-else></Icon>
           </button>
           <!-- file: preview -->
-          <FilePreview
+          <EditFilePreview
             class="file"
             @click.exact="editing = file.Key"
             :file="file"
