@@ -11,106 +11,24 @@ description: |-
   [The Covering catalogue, Karsten Schubert, with essay by Neil Walton — 2020](https://cathiepilkington.com/wp-content/uploads/2020/02/TheCovering%5Fcatalogue%5FKarstenSchubert%5F2020.pdf)
 thumb: /wp-content/uploads/2020/02/DSC5736-scaled.jpg
 images:
-  - url: /wp-content/uploads/2020/02/DSC5688-scaled.jpg
-    description: "Morton Bartlett Untitled (Standing Girl 1950-1960) re-presented by
-      Cathie Pilkington, doll: plaster with polychrome and fibre, dress: painted
-      linen, canvas, cotton, polyester, tyvek, mirror h76cm x w28cm x 24cm
-      courtesy of David Roberts Art Foundation"
-    title: The Covering Cherub
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5684-scaled.jpg
-    description: "Morton Bartlett Untitled (Standing Girl 1950-1960) re-presented by
-      Cathie Pilkington, doll: plaster with polychrome and fibre. dress: painted
-      linen, canvas, cotton, polyester, tyvek, mirror h76cm x w28cm x 24cm
-      courtesy of David Roberts Art Foundation"
-    title: The Covering Cherub
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5687-scaled.jpg
-    description: "Morton Bartlett Untitled (Standing Girl 1950-1960) re-presented by
-      Cathie Pilkington, doll: plaster with polychrome and fibre. dress: painted
-      linen, canvas, cotton, polyester, tyvek, mirror h76cm x w28cm x 24cm
-      courtesy of David Roberts Art Foundation"
-    title: The Covering Cherub
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5732-scaled.jpg
-    description: canvas, wood, plaster, resin, paint, lightbox, blankets, mixed
-      fabrics, tarpaulin, gaffer tape, glitter curtain
-    title: The Covering
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5736-scaled.jpg
-    description: canvas, wood, plaster, resin, paint, lightbox, blankets, mixed
-      fabrics, tarpaulin, gaffer tape, glitter curtain
-    title: The Covering
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5737-scaled.jpg
-    description: canvas, wood, plaster, resin, paint, lightbox, blankets, mixed
-      fabrics, tarpaulin, gaffer tape, glitter curtain
-    title: The Covering
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5742-scaled.jpg
-    description: mixed fabrics, paper, photographs, cloth, wood, steel, resin,
-      paint, gaffer tape, postcards 50cm x 40cm x 40cm and 150cm x 40cm x 40cm
-    title: The Covering installation (detail) Blockhead and The Kiss (Remain)
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5743-scaled.jpg
-    description: canvas, wood, plaster, resin, paint, blankets, mixed fabrics,
-      tarpaulin, gaffer tape, glitter curtain, steel, pegboard, painted papers
-    title: The Covering installation (back room detail)
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5751-scaled.jpg
-    description: mixed fabrics, paper, photographs, cloth, wood, steel, resin,
-      paint, gaffer tape, postcards 50cm x 40cm x 40cm and 150cm x 40cm x 40cm
-    title: The Covering installation (detail) Blockhead and The Kiss (Remain)
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5754-scaled.jpg
-    description: Edition of 3, fabric, wood, resin, paint, mirror 150cm x 40cm x 40cm
-    title: The Kiss (Remain)
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5760-scaled.jpg
-    description: canvas, wood, plaster, resin, paint, lightbox, blankets, mixed
-      fabrics, tarpaulin, gaffer tape, glitter curtain, mirrors, steel,
-      photographs
-    title: The Covering installation (detail reflection)
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5761-scaled.jpg
-    description: mirrors, foam, fabric, plaster, wood, gaffer tape, postcard
-    title: Fireplace
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5782-scaled.jpg
-    description: "wool, blanket, pencil, wooden block 50cm x 40cm x 40cm "
-    title: Blockhead
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5785-scaled.jpg
-    description: painted resin, edition of 3, 60cm x 50cm x 50cm (with Figure in
-      Space 2010 pencil on found paper 30cm x 26cm)
-    title: Degas Doll 5
-    year: 2016
-  - url: /wp-content/uploads/2020/02/DSC5794-scaled.jpg
-    description: mixed fabrics, paper, photographs, mirror, paint, gaffer tape
-    title: The Covering installation (detail)
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5795-scaled.jpg
-    description: dyed and painted linen, h92cm x w709cm
-    title: The Hushings
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5798-scaled.jpg
-    description: painted resin, edition of 3, 71cm x60cm x55cm
-    title: Degas Doll 1
-    year: 2016
-  - url: /wp-content/uploads/2020/02/DSC5728-scaled.jpg
-    description: plaster, clay, paint, paper, leather, mixed fabrics, found
-      photographs, ribbon curtains, mirrors, gaffer tape, biro, 210cm x 140cm x
-      45cm
-    title: Head Case
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5729-scaled.jpg
-    description: plaster, clay, paint, paper, leather, mixed fabrics, found
-      photographs, ribbon curtains, mirrors, gaffer tape, biro, 210cm x 140cm x
-      45cm
-    title: Head Case (detail)
-    year: 2020
-  - url: /wp-content/uploads/2020/02/DSC5730-scaled.jpg
-    description: mixed fabrics and plaster, 7cm x 35cm x 70cm
-    title: Limb Prop
-    year: 2020
+  - wp-content/uploads/2020/02/DSC5688-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5684-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5687-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5732-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5736-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5737-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5742-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5743-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5751-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5754-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5760-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5761-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5782-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5785-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5794-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5795-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5798-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5728-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5729-scaled.jpg
+  - wp-content/uploads/2020/02/DSC5730-scaled.jpg
 date: 01-01-2020

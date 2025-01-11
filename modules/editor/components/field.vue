@@ -6,6 +6,7 @@
       v-model="fieldModel"
       :config="config"
       :path="path"
+      v-if="fieldModel"
     />
   </div>
 </template>
@@ -27,7 +28,7 @@ const componentName = computed(() => {
   return componentMap[props.config[1].type] || false;
 });
 const props = defineProps(["config", "path"]);
-const model = defineModel<string>();
+const model = defineModel();
 const fieldModel = computed({
   get() {
     if (!model.value) return false;

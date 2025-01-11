@@ -1,16 +1,22 @@
 <template>
   <div
-    class="sticky top-0 flex w-full items-center gap-4 border-b border-solid border-bc bg-bg px-8 py-3"
+    class="sticky top-0 flex w-full items-center gap-4 border-b border-solid border-bc bg-bg px-8 py-3 text-sm"
   >
     <button
-      class="rounded border border-bg1 px-6 py-2 hover:bg-bg1"
+      class="rounded border border-bc px-6 py-2"
       @click="save"
+      :class="[
+        changed
+          ? 'border-fg bg-fg text-bg hover:border-f hover:bg-f'
+          : 'text-fg2',
+      ]"
     >
       Save
     </button>
     <button
-      class="rounded border border-bg1 px-6 py-2 hover:bg-bg1"
+      class="rounded border border-bc px-6 py-2"
       @click="refresh"
+      :class="[changed ? 'text-fg hover:bg-bg1' : 'text-fg2']"
     >
       Undo
     </button>
@@ -31,12 +37,15 @@
 
 <script lang="ts" setup>
 import { useTimeAgo, onKeyStroke } from "@vueuse/core";
-const { data, loading, refresh, save, saving } = useDataModel();
+const { data, originalData, loading, refresh, save, saving } = useDataModel();
 onKeyStroke("s", (ev) => {
   if (ev.metaKey) {
     ev.preventDefault();
     save();
   }
+});
+const changed = computed(() => {
+  return JSON.stringify(data.value) !== originalData.value;
 });
 </script>
 

@@ -7,128 +7,25 @@ description: |-
   [Read the essay _The Beautiful, Ugly Soul_ by Neil Walton (2010)](https://cathiepilkington.com/wp-content/uploads/2016/07/The-beautiful-ugly-soul.pdf)
 thumb: /wp-content/uploads/2016/05/Mother01X.jpg
 images:
-  - url: /wp-content/uploads/2016/05/Mother01X.jpg
-    description: |-
-      Wood, blanket, straw, clay, lino, steel, paint  
-      110 x 80 x 50 cm
-    title: Mother
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Blank.jpg
-    description: |-
-      Felt, string, wool blanket  
-      45 x 40 x 20 cm
-    title: Blank
-    year: 2010
-  - url: /wp-content/uploads/2016/05/GOAT01X.jpg
-    description: |-
-      Wood, clay, paper, paint  
-      110 x 44 x 70 cm
-    title: The Value of the Paw
-    year: 2010
-  - url: /wp-content/uploads/2016/05/GOATCUX.jpg
-    description: |-
-      Wood, clay, paper, paint  
-      110 x 44 x 70 cm
-    title: The value of the paw (detail)
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Snowwhite.jpg
-    description: |-
-      Wood, lino, plaster, clay, fabric, paint  
-      46 x 46 x 46 cm
-    title: Snow White
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Kiss-of-Death-03X.jpg
-    description: |-
-      Wood, plaster, clay, fabric, paint  
-      28 x 58 x 35 cm
-    title: Kiss of Death
-    year: 2010
-  - url: /wp-content/uploads/2016/05/BB.jpg
-    description: |-
-      Jesmonite, paint  
-      30 x 40 x 35 cm
-    title: B&B
-    year: 2009
-  - url: /wp-content/uploads/2016/05/Foundling.jpg
-    description: |-
-      Jesmonite, paint  
-      56 x 30 x 25 cm
-    title: The Foundling
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Babs01X.jpg
-    description: |-
-      Jesmonite, wood, clay, plaster, paint  
-      110 x 60 x 50 cm
-    title: Babs
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Flopsy.jpg
-    description: |-
-      Jesmonite, paint  
-      46 x 58 x 33 cm
-    title: Flopsy
-    year: 2009
-  - url: /wp-content/uploads/2016/05/PotterPig02X.jpg
-    description: |-
-      Jesmonite, wood, clay, paint  
-      140 x 120 x 80 cm
-    title: Potter Pig
-    year: 2010
-  - url: /wp-content/uploads/2016/05/PotterPigCUX.jpg
-    description: |-
-      Jesmonite, wood, clay, paint  
-      140 x 120 x 80 cm
-    title: Potter Pig (detail)
-    year: 2010
-  - url: /wp-content/uploads/2016/05/HorseyHorsey02.jpg
-    description: |-
-      Wood, plaster, clay, fabric, paint  
-      52 x 40 x 65 cm
-    title: Horsey Horsey
-    year: 2010
-  - url: /wp-content/uploads/2016/05/PK03X.jpg
-    description: Wood, steel, clay, plaster, paint. 160 x 100 x 85cm
-    title: Peaceable Kingdom
-    year: 2009
-  - url: /wp-content/uploads/2016/05/Levitation.jpg
-    description: |-
-      Wood, steel, clay, fabric, lino, paint  
-      28 x 90 x 52 cm
-    title: Levitating Doll
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Snowball.jpg
-    description: |-
-      Wood, plaster, clay, fabric, paint  
-      37 x 60 x 30 cm
-    title: The Snowball
-    year: 2010
-  - url: /wp-content/uploads/2016/05/The-Fight.jpg
-    description: |-
-      Wood, plaster, clay, fabric, paint  
-      40 x 55 x 38 cm
-    title: Help is On Its Way
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Threesome.jpg
-    description: |-
-      Jesmonite, paint  
-      50 x 50 x 35 cm
-    title: Threesome
-    year: 2009
-  - url: /wp-content/uploads/2016/05/Wood-Cutter02.jpg
-    description: |-
-      Clay, plaster, wood, resin, paint  
-      86 x 110 x 90 cm
-    title: Fallen Greatness
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Wood-Cutter.jpg
-    description: |-
-      Clay, plaster, wood, resin, paint  
-      86 x 110 x 90 cm
-    title: Fallen Greatness (detail)
-    year: 2010
-  - url: /wp-content/uploads/2016/05/Epiphany01X.jpg
-    description: |-
-      Plaster, clay, brass, fabric, paint  
-      45 x 50 x 76 cm
-    title: Epiphany
-    year: 2010
+  - wp-content/uploads/2016/05/Mother01X.jpg
+  - wp-content/uploads/2016/05/Blank.jpg
+  - wp-content/uploads/2016/05/GOAT01X.jpg
+  - wp-content/uploads/2016/05/GOATCUX.jpg
+  - wp-content/uploads/2016/05/Snowwhite.jpg
+  - wp-content/uploads/2016/05/Kiss-of-Death-03X.jpg
+  - wp-content/uploads/2016/05/BB.jpg
+  - wp-content/uploads/2016/05/Foundling.jpg
+  - wp-content/uploads/2016/05/Babs01X.jpg
+  - wp-content/uploads/2016/05/Flopsy.jpg
+  - wp-content/uploads/2016/05/PotterPig02X.jpg
+  - wp-content/uploads/2016/05/PotterPigCUX.jpg
+  - wp-content/uploads/2016/05/HorseyHorsey02.jpg
+  - wp-content/uploads/2016/05/PK03X.jpg
+  - wp-content/uploads/2016/05/Levitation.jpg
+  - wp-content/uploads/2016/05/Snowball.jpg
+  - wp-content/uploads/2016/05/The-Fight.jpg
+  - wp-content/uploads/2016/05/Threesome.jpg
+  - wp-content/uploads/2016/05/Wood-Cutter02.jpg
+  - wp-content/uploads/2016/05/Wood-Cutter.jpg
+  - wp-content/uploads/2016/05/Epiphany01X.jpg
 date: 01-01-2010

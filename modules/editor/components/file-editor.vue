@@ -123,6 +123,7 @@ function resetData() {
     datamodel.value.year = d.year;
   }
   const bf = bucketfiles.find((x) => x.Key === model.value);
+  console.log("BUCKETFILE", model.value);
   if (bf) {
     bucketfile.value = bf;
   }

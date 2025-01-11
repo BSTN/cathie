@@ -12,7 +12,7 @@ function refresh() {
     .then((res) => res.json())
     .then((res) => {
       data.value = res;
-      originalData.value = res;
+      originalData.value = JSON.stringify(res);
       loading.value = false;
     });
 }
@@ -39,6 +39,7 @@ async function save() {
     .then(() => {
       // todo: message
       // alert("saved");
+      refresh();
     })
     .catch((err) => {
       alert("error!");
