@@ -49,22 +49,22 @@ She was elected Royal Academician in 2014\. In 2016 she became professor of Scul
 
 [Studio International, interview with Anna McNay — 2021](https://www.studiointernational.com/index.php/cathie-pilkington-interview-estin-thalassa-karsten-schubert-london)
 
-[The Covering catalogue, Karsten Schubert, with essay by Neil Walton — 2020](https://cathiepilkington.com/wp-content/uploads/2020/02/TheCovering%5Fcatalogue%5FKarstenSchubert%5F2020.pdf)
+[The Covering catalogue, Karsten Schubert, with essay by Neil Walton — 2020](https://cathiepilkington.com/wp-content/2020/02/TheCovering%5Fcatalogue%5FKarstenSchubert%5F2020.pdf)
 
-[Working From Home catalogue, Pallant House Gallery, essay by Neil Walton — 2019](https://cathiepilkington.com/wp-content/uploads/2019/02/PHG%5FPilkington%5Fleaflet%5FFINAL.pdf)
+[Working From Home catalogue, Pallant House Gallery, essay by Neil Walton — 2019](https://cathiepilkington.com/wp-content/2019/02/PHG%5FPilkington%5Fleaflet%5FFINAL.pdf)
 
-[Oh Comely magazine, interview with Alice Snape — 2018](https://cathiepilkington.com/wp-content/uploads/2019/02/OhComely46.cathiepilkington.pdf)
+[Oh Comely magazine, interview with Alice Snape — 2018](https://cathiepilkington.com/wp-content/2019/02/OhComely46.cathiepilkington.pdf)
 
-[Art Quarterly, interview with Anna McNay — 2018](https://cathiepilkington.com/wp-content/uploads/2019/02/ArtQuarterly%5F2018%5FCathie-Pilkington.pdf)
+[Art Quarterly, interview with Anna McNay — 2018](https://cathiepilkington.com/wp-content/2019/02/ArtQuarterly%5F2018%5FCathie-Pilkington.pdf)
 
-[From Life catalogue, Angela Kingston — 2018](https://cathiepilkington.com/wp-content/uploads/2019/02/FromLifeCatalogue2018%5FAngelaKingston.pdf)
+[From Life catalogue, Angela Kingston — 2018](https://cathiepilkington.com/wp-content/2019/02/FromLifeCatalogue2018%5FAngelaKingston.pdf)
 
-[Doll For Petra catalogue, Ditchling Museum — 2017](https://cathiepilkington.com/wp-content/uploads/2019/02/DollForPetra%5FDitchling%5FEricGill%5F2017.pdf)
+[Doll For Petra catalogue, Ditchling Museum — 2017](https://cathiepilkington.com/wp-content/2019/02/DollForPetra%5FDitchling%5FEricGill%5F2017.pdf)
 
-[Read the essay _The Value of the Hand_ by Ben Carpenter — 2012](https://cathiepilkington.com/wp-content/uploads/2016/08/The-Value-of-the-Hand-Benedict-Carpenter.pdf)
+[Read the essay _The Value of the Hand_ by Ben Carpenter — 2012](https://cathiepilkington.com/wp-content/2016/08/The-Value-of-the-Hand-Benedict-Carpenter.pdf)
 
-[Read _Cap’s Crits_ review _—_ 2010](https://cathiepilkington.com/wp-content/uploads/2016/07/caps-crit-Cathie-Pilkington.pdf)
+[Read _Cap’s Crits_ review _—_ 2010](https://cathiepilkington.com/wp-content/2016/07/caps-crit-Cathie-Pilkington.pdf)
 
-[Read the essay _The Beautiful, Ugly Soul_ by Neil Walton — 2010](https://cathiepilkington.com/wp-content/uploads/2016/07/The-beautiful-ugly-soul.pdf)
+[Read the essay _The Beautiful, Ugly Soul_ by Neil Walton — 2010](https://cathiepilkington.com/wp-content/2016/07/The-beautiful-ugly-soul.pdf)
 
-[White Elephant catalogue, essay Archaeology of the Frivolous, Neil Walton — 2007](https://cathiepilkington.com/wp-content/uploads/2019/02/WhiteElephantCatalogue2007.pdf)
+[White Elephant catalogue, essay Archaeology of the Frivolous, Neil Walton — 2007](https://cathiepilkington.com/wp-content/2019/02/WhiteElephantCatalogue2007.pdf)

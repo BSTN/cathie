@@ -1,6 +1,6 @@
 <template>
   <div
-    class="file-browser fixed bottom-0 left-0 right-0 top-0 overflow-auto bg-bg1 p-0"
+    class="file-browser fixed bottom-0 left-0 right-0 top-0 z-50 overflow-auto bg-bg1 p-0"
   >
     <!-- editor -->
     <transition name="fade">
@@ -51,6 +51,16 @@
       >
         Deselect all
       </button>
+      <button
+        class="rounded-md bg-bg1 p-1 px-3 text-f"
+        @click="emit('done', selected)"
+        v-if="props.mode === 'select'"
+      >
+        Done
+      </button>
+      <button class="text-2xl text-fg2 hover:text-fg" @click="refreshIndex">
+        <Icon icon="material-symbols:refresh"></Icon>
+      </button>
     </div>
     <div class="bg-bg p-8">
       <!-- the grid -->
@@ -99,6 +109,14 @@ const filterType = ref("");
 const filterQuery = ref("");
 const editing = ref("");
 const selected = ref([]);
+const emit = defineEmits(["done", "cancel"]);
+type ModeOptions = "select" | "selectOne";
+const props = defineProps<{ mode?: modeOptions }>();
+
+async function refreshIndex() {
+  await fetch("/api/index");
+}
+
 function toggleSelected(key: string) {
   if (selected.value.includes(key)) {
     selected.value = selected.value.filter((x) => x !== key);
@@ -121,6 +139,15 @@ function openPrev() {
   editing.value =
     filteredFiles.value[nowindex - 1].Key || filteredFiles.value[0].Key;
 }
+onKeyStroke("Escape", () => {
+  if (editing.value) {
+    return;
+  }
+  emit("cancel");
+});
+onKeyStroke("Enter", () => {
+  emit("done", selected.value);
+});
 onKeyStroke("k", (ev) => {
   if (ev.metaKey && searchElement.value) {
     ev.preventDefault();

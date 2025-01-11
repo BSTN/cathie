@@ -94,7 +94,8 @@ import { onKeyStroke } from "@vueuse/core";
 const emits = defineEmits(["next", "prev"]);
 const model = defineModel<string>();
 const bucketfile = ref({});
-onKeyStroke("Escape", () => {
+onKeyStroke("Escape", (ev) => {
+  ev.stopPropagation();
   model.value = "";
 });
 onKeyStroke("ArrowLeft", () => {
