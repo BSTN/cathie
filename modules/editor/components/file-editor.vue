@@ -48,11 +48,13 @@
       <div class="mb-4 flex gap-1">
         <button
           class="rounded border border-solid border-bg1 p-1 px-3 text-sm text-fg hover:bg-bg2"
+          @click="save"
         >
           save
         </button>
         <button
           class="rounded border border-solid border-bg1 p-1 px-3 text-sm text-fg hover:bg-bg2"
+          @click="resetData()"
         >
           undo
         </button>
@@ -102,11 +104,9 @@
 </template>
 
 <script lang="ts" setup>
-import metadata from "@/data/metadata.yml";
 import bucketfiles from "@/data/bucketfiles.json";
 import { Icon } from "@iconify/vue";
-import { onKeyStroke } from "@vueuse/core";
-const { config, configStatus, saveMetadata } = useDataModel();
+const { config, configStatus, saveMetadata, getMetadata } = useDataModel();
 const emits = defineEmits(["next", "prev"]);
 const model = defineModel<string>();
 const bucketfile = ref({});
@@ -130,21 +130,18 @@ function next() {
 }
 
 async function save() {
-  console.log("save", model.value);
   if (!model.value) return;
   await saveMetadata({ path: model.value, data: datamodel.value });
-  // console.log("save datamodel", JSON.parse(JSON.stringify(datamodel.value)));
+  console.log("done", model.value);
 }
 
 const datamodel = ref<any>({});
 watch(model, resetData);
-function resetData() {
-  const d = metadata.find((x) => x.path === model.value);
-  if (d) {
-    for (let i in config.value._media_metadata.fields) {
-      // fill datamodel with field
-      datamodel.value[i] = d[i] || "";
-    }
+async function resetData() {
+  const d = await getMetadata(model.value);
+  for (let i in config.value._media_metadata.fields) {
+    // fill datamodel with field
+    datamodel.value[i] = d && i in d ? d[i] : "";
   }
   // populate bucketfile
   const bf = bucketfiles.find((x) => x.Key === model.value);

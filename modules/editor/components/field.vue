@@ -8,7 +8,6 @@
       v-model="fieldModel"
       :config="config"
       :path="path"
-      v-if="fieldModel"
     />
   </div>
 </template>
@@ -33,14 +32,14 @@ const props = defineProps(["config", "path"]);
 const model = defineModel();
 const fieldModel = computed({
   get() {
-    if (!model.value) return false;
+    if (!model.value) return "";
     // depth maximum 3
     if (props.path.length === 1) {
-      return model.value[props.path[0]];
+      return model.value[props.path[0]] || "";
     } else if (props.path.length === 2) {
-      return model.value[props.path[0]][props.path[1]];
+      return model.value[props.path[0]][props.path[1]] || "";
     } else if (props.path.length === 3) {
-      return model.value[props.path[0]][props.path[1]][props.path[2]];
+      return model.value[props.path[0]][props.path[1]][props.path[2]] || "";
     }
   },
   set(value) {

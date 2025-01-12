@@ -143,14 +143,26 @@ export default defineEventHandler(async (event) => {
       return x.path === body.path;
     });
     if (foundIndex > -1) {
-      metadata[foundIndex] = Object.assign(body.data, { path: body.path });
+      metadata[foundIndex] = Object.assign({ path: body.path }, body.data);
     } else {
-      metadata.push(Object.assign(body.data, { path: body.path }));
+      metadata.push(Object.assign({ path: body.path }, body.data));
     }
     fs.writeFileSync(resolve("./data/metadata.yml"), yaml.stringify(metadata));
     return {
       success: true,
     };
+  }
+
+  if (name === "get-metadata") {
+    const body = JSON.parse(await readBody(event));
+    const p = body.path;
+    const metadataRaw = fs.readFileSync(resolve("./data/metadata.yml"), "utf8");
+    const metadata = yaml.parse(metadataRaw);
+    return (
+      metadata.find((x) => {
+        return x.path === body.path;
+      }) || {}
+    );
   }
 
   if (name === "config") {

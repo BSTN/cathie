@@ -80,6 +80,19 @@ async function saveMetadata(metadata: { path: string; data: any }) {
     });
 }
 
+async function getMetadata(path: string) {
+  return await fetch(`/api/get-metadata`, {
+    method: "POST",
+    body: JSON.stringify({ path }),
+  })
+    .then((res) => res.json())
+    .then((res) => res)
+    .catch((err) => {
+      alert("error!");
+      console.warn(err);
+    });
+}
+
 const changed = computed(() => {
   if (!data?.value || !dataOriginal) return false;
   return JSON.stringify(data.value) !== dataOriginal;
@@ -106,5 +119,6 @@ export const useDataModel = () => {
     save,
     saving,
     saveMetadata,
+    getMetadata,
   };
 };
