@@ -1,6 +1,8 @@
 <template>
   <div>
-    <label class="mb-2 block text-sm capitalize text-fg2">{{ label }}</label>
+    <label class="text-bold mb-2 block text-sm capitalize text-fg2">{{
+      label
+    }}</label>
     <component
       :is="componentName"
       v-model="fieldModel"

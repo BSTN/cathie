@@ -7,6 +7,7 @@ contact:
 projects:
   icon: simple-line-icons:docs
   type: folder
+  sortable: true
   fields:
     title:
       type: text
@@ -16,3 +17,10 @@ projects:
 media:
   type: filebrowser
   icon: material-symbols-light:perm-media-rounded
+_media_metadata:
+  fields:
+    title:
+      type: text
+      label: "Title"
+    year: text
+    description: markdown

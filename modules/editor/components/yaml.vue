@@ -1,7 +1,7 @@
 <template>
   <div>
     <EditStatusbar />
-    <div class="px-8 py-8" v-if="data.data && configModel">
+    <div class="px-8 py-8" v-if="data?.data && configModel">
       <EditField
         v-for="(item, key) in configModel"
         :config="[key, item]"
@@ -15,10 +15,10 @@
 
 <script lang="ts" setup>
 const route = useRoute();
-const { data, loading, refresh, config, configLoading } = useDataModel();
+const { data, config, configStatus } = useDataModel();
 
 const configModel = computed(() => {
-  if (configLoading.value) return false;
+  if (configStatus.value !== "success" || !config.value) return false;
   if (route.params.path.length === 1) {
     return config.value[route.params.path[0]];
   } else if (route.params.path.length === 2) {

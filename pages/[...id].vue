@@ -1,19 +1,24 @@
 <template>
   <div class="p-6">
-    <div class="contact w-[40rem] mb-12">
-      <MDC :value="contact" v-if="contact" tag="div" class="w-[40rem] mb-4" />
+    <div class="contact mb-12 w-[40rem]">
+      <MDC :value="contact" v-if="contact" tag="div" class="mb-4 w-[40rem]" />
     </div>
-    <div class="about w-[40rem] mb-12">
-     <MDC :value="about" v-if="about" tag="div" class="w-[40rem] mb-4" />
+    <div class="about mb-12 w-[40rem]">
+      <MDC :value="about" v-if="about" tag="div" class="mb-4 w-[40rem]" />
     </div>
     <div v-if="exhibitions">
-      <div v-for="(exhibition,k) in exhibitions" class="mb-6">
+      <div v-for="(exhibition, k) in exhibitions" class="mb-6">
         <h2 class="text-2xl">{{ exhibition.title }}</h2>
-        <MDC :value="exhibition.description" v-if="exhibition?.description" tag="div" class="w-[40rem] mb-4" />
+        <MDC
+          :value="exhibition.description"
+          v-if="exhibition?.description"
+          tag="div"
+          class="mb-4 w-[40rem]"
+        />
         <div v-for="image in exhibition.images" class="imgsize" v-if="k === 0">
-          <TwicImg :src="image.url" :alt="image.title"/>
-           <!-- {{ `https://cathie.lon1.digitaloceanspaces.com` + image.url }} -->
-           <!-- <img :src="`https://cathie.lon1.digitaloceanspaces.com` + image.url" alt="" width="400px"> -->
+          <!-- <TwicImg :src="image.url" :alt="image.title"/> -->
+          <!-- {{ `https://cathie.lon1.digitaloceanspaces.com` + image.url }} -->
+          <!-- <img :src="`https://cathie.lon1.digitaloceanspaces.com` + image.url" alt="" width="400px"> -->
         </div>
       </div>
     </div>
@@ -21,9 +26,7 @@
 </template>
 
 <script lang="ts" setup>
-
-const { exhibitions, about, contact } = useData()
-
+const { exhibitions, about, contact } = useData();
 </script>
 
 <style>

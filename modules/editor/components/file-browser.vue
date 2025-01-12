@@ -19,7 +19,7 @@
       <!-- <button class="rounded-md bg-bg2 p-1 px-3 text-fg">Folders</button> -->
       <input
         type="text"
-        class="rounded-md border border-bg1 bg-bg1 px-4 py-2 text-fg placeholder-fg2 focus:border-bg2 focus:bg-bg2 focus:outline-none focus:ring-0"
+        class="rounded-md border border-bg1 bg-bg1 px-4 py-2 text-sm text-fg placeholder-fg2 focus:border-bg2 focus:bg-bg2 focus:outline-none focus:ring-0"
         placeholder="Search..."
         ref="searchElement"
         @keydown.escape="$event.target.blur()"
@@ -114,7 +114,9 @@ type ModeOptions = "select" | "selectOne";
 const props = defineProps<{ mode?: modeOptions }>();
 
 async function refreshIndex() {
-  await fetch("/api/index");
+  await fetch("/api/index").catch((err) => {
+    console.warn(err);
+  });
 }
 
 function toggleSelected(key: string) {

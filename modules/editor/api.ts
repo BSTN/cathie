@@ -56,6 +56,11 @@ const getBucketFiles = async () => {
 
 // Usage
 export default defineEventHandler(async (event) => {
+  if (!event.context.params?.path) {
+    setResponseStatus(event, 404);
+    return { error: "No path provided" };
+  }
+
   const name = event.context.params?.path;
 
   // index

@@ -2685,11 +2685,6 @@
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==
 
-"@twicpics/components@^0.31.1":
-  version "0.31.1"
-  resolved "https://registry.yarnpkg.com/@twicpics/components/-/components-0.31.1.tgz#120e585cbc1c78544afc7ec6264f980cfba9089f"
-  integrity sha512-F/8rf00OkF4zF57YYZW5xjHQs6P1w7lm7q9sGRMxszd2aupqRYxyS6u1SDO4bqolHkxT4rs6+tKm6lzNn8t1Qw==
-
 "@types/debug@^4.0.0":
   version "4.1.12"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.12.tgz#a155f21690871953410df4b6b6f53187f0500917"

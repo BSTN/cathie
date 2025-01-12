@@ -17,24 +17,24 @@ She was elected Royal Academician in 2014\. In 2016 she became professor of Scul
 
 ## Selected Exhibitions and Interventions
 
-* [The Value of the Paw  V&A Museum of Childhood Bethnal Green, 2012](https://cathiepilkington.com/exhibitions/the-value-of-the-paw)
+* [The Value of the Paw  V&A Museum of Childhood Bethnal Green, 2012](/exhibitions/the-value-of-the-paw)
 * Life Room: Anatomy of a Doll  
-[Royal Academy Schools Life Room, 2017](https://cathiepilkington.com/exhibitions/life-room-anatomy-of-a-doll)  
-[Brighton University Galleries, Brighton Festival, 2017](https://cathiepilkington.com/exhibitions/the-life-rooms-brighton)
+[Royal Academy Schools Life Room, 2017](/exhibitions/life-room-anatomy-of-a-doll)  
+[Brighton University Galleries, Brighton Festival, 2017](/exhibitions/the-life-rooms-brighton)
 * Doll for Petra  
-[Ditchling Museum of Art and Craft, 2017](https://cathiepilkington.com/exhibitions/doll-for-petra)
+[Ditchling Museum of Art and Craft, 2017](/exhibitions/doll-for-petra)
 * Working from Home  
-[Dorich House Museum, 2018](https://cathiepilkington.com/exhibitions/life-room-working-from-home)  
-[Pallant House Gallery, 2019](https://cathiepilkington.com/exhibitions/life-room-working-from-home)
+[Dorich House Museum, 2018](/exhibitions/life-room-working-from-home)  
+[Pallant House Gallery, 2019](/exhibitions/life-room-working-from-home)
 * The Covering  
  Cathie Pilkington, Pierre Molinier and Morton Bartlett  
-[Karsten Schubert 14 February – 20 March 2020](https://cathiepilkington.com/exhibitions/the-covering)
+[Karsten Schubert 14 February – 20 March 2020](/exhibitions/the-covering)
 * The Ancestors  
-[Royal Academy of Art, London 7 September – 19th January 2020](https://cathiepilkington.com/exhibitions/the-ancestors)
+[Royal Academy of Art, London 7 September – 19th January 2020](/exhibitions/the-ancestors)
 * Estin Thalassa  
-[Karsten Schubert 1 June-9 July 2021](https://cathiepilkington.com/exhibitions/estin-thalassa)
+[Karsten Schubert 1 June-9 July 2021](/exhibitions/estin-thalassa)
 * Weird Horses  
-[Karsten Schubert 21 April – 27 May 2023](https://cathiepilkington.com/exhibitions/weird-horses)
+[Karsten Schubert 21 April – 27 May 2023](/exhibitions/weird-horses)
 
 ---
 
@@ -49,22 +49,22 @@ She was elected Royal Academician in 2014\. In 2016 she became professor of Scul
 
 [Studio International, interview with Anna McNay — 2021](https://www.studiointernational.com/index.php/cathie-pilkington-interview-estin-thalassa-karsten-schubert-london)
 
-[The Covering catalogue, Karsten Schubert, with essay by Neil Walton — 2020](https://cathiepilkington.com/wp-content/2020/02/TheCovering%5Fcatalogue%5FKarstenSchubert%5F2020.pdf)
+[The Covering catalogue, Karsten Schubert, with essay by Neil Walton — 2020](/wp-content/2020/02/TheCovering%5Fcatalogue%5FKarstenSchubert%5F2020.pdf)
 
-[Working From Home catalogue, Pallant House Gallery, essay by Neil Walton — 2019](https://cathiepilkington.com/wp-content/2019/02/PHG%5FPilkington%5Fleaflet%5FFINAL.pdf)
+[Working From Home catalogue, Pallant House Gallery, essay by Neil Walton — 2019](/wp-content/2019/02/PHG%5FPilkington%5Fleaflet%5FFINAL.pdf)
 
-[Oh Comely magazine, interview with Alice Snape — 2018](https://cathiepilkington.com/wp-content/2019/02/OhComely46.cathiepilkington.pdf)
+[Oh Comely magazine, interview with Alice Snape — 2018](/wp-content/2019/02/OhComely46.cathiepilkington.pdf)
 
-[Art Quarterly, interview with Anna McNay — 2018](https://cathiepilkington.com/wp-content/2019/02/ArtQuarterly%5F2018%5FCathie-Pilkington.pdf)
+[Art Quarterly, interview with Anna McNay — 2018](/wp-content/2019/02/ArtQuarterly%5F2018%5FCathie-Pilkington.pdf)
 
-[From Life catalogue, Angela Kingston — 2018](https://cathiepilkington.com/wp-content/2019/02/FromLifeCatalogue2018%5FAngelaKingston.pdf)
+[From Life catalogue, Angela Kingston — 2018](/wp-content/2019/02/FromLifeCatalogue2018%5FAngelaKingston.pdf)
 
-[Doll For Petra catalogue, Ditchling Museum — 2017](https://cathiepilkington.com/wp-content/2019/02/DollForPetra%5FDitchling%5FEricGill%5F2017.pdf)
+[Doll For Petra catalogue, Ditchling Museum — 2017](/wp-content/2019/02/DollForPetra%5FDitchling%5FEricGill%5F2017.pdf)
 
-[Read the essay _The Value of the Hand_ by Ben Carpenter — 2012](https://cathiepilkington.com/wp-content/2016/08/The-Value-of-the-Hand-Benedict-Carpenter.pdf)
+[Read the essay _The Value of the Hand_ by Ben Carpenter — 2012](/wp-content/2016/08/The-Value-of-the-Hand-Benedict-Carpenter.pdf)
 
-[Read _Cap’s Crits_ review _—_ 2010](https://cathiepilkington.com/wp-content/2016/07/caps-crit-Cathie-Pilkington.pdf)
+[Read _Cap’s Crits_ review _—_ 2010](/wp-content/2016/07/caps-crit-Cathie-Pilkington.pdf)
 
-[Read the essay _The Beautiful, Ugly Soul_ by Neil Walton — 2010](https://cathiepilkington.com/wp-content/2016/07/The-beautiful-ugly-soul.pdf)
+[Read the essay _The Beautiful, Ugly Soul_ by Neil Walton — 2010](/wp-content/2016/07/The-beautiful-ugly-soul.pdf)
 
-[White Elephant catalogue, essay Archaeology of the Frivolous, Neil Walton — 2007](https://cathiepilkington.com/wp-content/2019/02/WhiteElephantCatalogue2007.pdf)
+[White Elephant catalogue, essay Archaeology of the Frivolous, Neil Walton — 2007](/wp-content/2019/02/WhiteElephantCatalogue2007.pdf)

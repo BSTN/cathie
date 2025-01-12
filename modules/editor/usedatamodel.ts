@@ -1,32 +1,48 @@
-const data = ref({});
-const originalData = ref({});
-const loading = ref(false);
+import cloneDeep from "lodash/cloneDeep";
 const saving = ref(false);
+const data = ref<{ data: any; timestamp: string }>({ data: {}, timestamp: "" });
+const status = ref("loading");
 const config = ref({});
-const configLoading = ref(false);
-
-function refresh() {
+const configStatus = ref("loading");
+let dataOriginal = {};
+let url = "";
+let configLoaded = false;
+async function refresh(donotforce?: boolean) {
   const route = useRoute();
-  loading.value = true;
-  fetch(`/api/get?path=${route.params.path.join("/")}`)
-    .then((res) => res.json())
+  const newurl = `/api/get?path=${route.params.path.join("/")}`;
+  if (newurl === url && donotforce) {
+    return;
+  }
+  url = newurl;
+  status.value = "pending";
+  await $fetch(`/api/get?path=${route.params.path.join("/")}`)
     .then((res) => {
       data.value = res;
-      originalData.value = JSON.stringify(res);
-      loading.value = false;
+      dataOriginal = JSON.stringify(res);
+      status.value = "success";
+    })
+    .catch((err) => {
+      status.value = "error";
+      console.warn(err);
     });
 }
 
-function refreshConfig() {
-  configLoading.value = true;
-  fetch(`/api/config`)
-    .then((res) => res.json())
+async function refreshConfig(donotforce?: boolean) {
+  if (configLoaded && donotforce) return;
+  configLoaded = true;
+  configStatus.value = "pending";
+
+  await $fetch("/api/config")
     .then((res) => {
       config.value = res;
-      configLoading.value = false;
+      configStatus.value = "success";
+    })
+    .catch((err) => {
+      configStatus.value = "error";
     });
 }
 
+// save
 async function save() {
   const route = useRoute();
   fetch(`/api/save`, {
@@ -47,20 +63,30 @@ async function save() {
     });
 }
 
+const changed = computed(() => {
+  if (!data?.value || !dataOriginal) return false;
+  return JSON.stringify(data.value) !== dataOriginal;
+});
+
 export const useDataModel = () => {
   const route = useRoute();
+
+  // get data
+  refresh(true);
+  refreshConfig(true);
+
+  // watch path change
   watch(() => route.path, refresh);
-  refresh();
-  refreshConfig();
+
   return {
     data,
-    originalData,
-    loading,
+    status,
+    changed,
     refresh,
-    save,
-    refreshConfig,
     config,
-    configLoading,
+    configStatus,
+    refreshConfig,
+    save,
     saving,
   };
 };

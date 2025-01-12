@@ -15,7 +15,7 @@ import type { NuxtTemplate } from "@nuxt/schema";
 const { resolve } = createResolver(import.meta.url);
 
 export default defineNuxtModule({
-  setup() {
+  setup(_, nuxt) {
     // only run in dev mode (when S3 is set in env)
     if (!process.env.S3) {
       return false;
@@ -34,6 +34,7 @@ export default defineNuxtModule({
       as: "useDataModel",
       from: resolve("./editor/usedatamodel.ts"),
     });
+    addPlugin(resolve("./editor/globalkeys.ts"));
     addServerHandler({
       route: "/api/:path",
       handler: resolve("./editor/api.ts"),

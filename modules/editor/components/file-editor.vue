@@ -1,18 +1,34 @@
 <template>
   <div
     class="fixed left-0 top-0 z-[99] flex h-full w-full flex-row gap-8 bg-bg p-4 text-fg"
+    ref="el"
+    v-globalkeys="{
+      's.meta': save,
+      Escape: () => {
+        model = '';
+      },
+      ArrowLeft: prev,
+      ArrowRight: next,
+    }"
   >
     <div class="relative flex grow border border-solid border-bg1">
       <div
         v-if="bucketfile?.type === 'image'"
-        class="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center"
+        class="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center overflow-hidden"
       >
-        <img
-          loading="lazy"
-          :src="`https://cathie.twic.pics/${bucketfile.Key}?twic=v1/contain-max=2000x2000`"
-          class="max-h-full max-w-full object-contain"
+        <picture
+          class="pointer-events-none h-full w-full object-contain"
           :key="bucketfile.Key"
-        />
+        >
+          <img
+            loading="lazy"
+            :src="`//wsrv.nl/?url=cathie.lon1.digitaloceanspaces.com/${bucketfile.Key.replace(
+              /^\//,
+              '',
+            )}?w=2000&h=2000&fit=contain`"
+            class="absolute h-full w-full object-contain"
+          />
+        </picture>
       </div>
       <div
         v-else-if="bucketfile?.type === 'video'"
@@ -26,9 +42,20 @@
       </div>
       <div v-else>{{ bucketfile }}</div>
     </div>
+    <!-- right frame -->
     <div class="w-96 shrink-0 pr-4">
       <!-- buttons -->
       <div class="mb-4 flex gap-1">
+        <button
+          class="rounded border border-solid border-bg1 p-1 px-3 text-sm text-fg hover:bg-bg2"
+        >
+          save
+        </button>
+        <button
+          class="rounded border border-solid border-bg1 p-1 px-3 text-sm text-fg hover:bg-bg2"
+        >
+          undo
+        </button>
         <div class="grow"></div>
         <button
           class="rounded border border-solid border-bg1 p-1 px-3 text-fg hover:bg-bg2"
@@ -48,39 +75,27 @@
           <Icon icon="ic:baseline-close"></Icon>
         </button>
       </div>
+
+      <EditField
+        v-for="(item, key) in config._media_metadata.fields"
+        v-if="config?._media_metadata?.fields"
+        :config="[key, item]"
+        v-model="datamodel"
+        :path="[key]"
+        class="mb-4"
+      ></EditField>
+
       <!-- name / link -->
       <div class="mb-8">
         <NuxtLink
           :to="`https://cathie.lon1.digitaloceanspaces.com/${model}`"
           target="_blank"
+          class="break-all text-xs"
           >{{ model }}</NuxtLink
         >
         <div class="text-xs">
           {{ bucketfile.hrsize }}
         </div>
-      </div>
-      <!-- size -->
-      <!-- title -->
-      <div class="mb-4">
-        <input
-          type="text"
-          class="w-full rounded"
-          v-model="datamodel.title"
-          placeholder="Title..."
-        />
-      </div>
-      <!-- year -->
-      <div class="mb-4">
-        <input type="text" placeholder="Year..." v-model="datamodel.year" />
-      </div>
-      <!-- description -->
-      <div class="mb-4">
-        <textarea
-          type="text"
-          class="min-h-96"
-          placeholder="Description..."
-          v-model="datamodel.description"
-        />
       </div>
     </div>
   </div>
@@ -91,40 +106,45 @@ import metadata from "@/data/metadata.yml";
 import bucketfiles from "@/data/bucketfiles.json";
 import { Icon } from "@iconify/vue";
 import { onKeyStroke } from "@vueuse/core";
+const { config, configStatus } = useDataModel();
 const emits = defineEmits(["next", "prev"]);
 const model = defineModel<string>();
 const bucketfile = ref({});
-onKeyStroke("Escape", (ev) => {
-  ev.stopPropagation();
-  model.value = "";
-});
-onKeyStroke("ArrowLeft", () => {
+const el = ref(null);
+
+function prev() {
   if (
     !!document.activeElement &&
     !!document.activeElement.nodeName.match("INPUT|TEXTAREA")
   )
     return;
   emits("prev");
-});
-onKeyStroke("ArrowRight", () => {
+}
+function next() {
   if (
     !!document.activeElement &&
     !!document.activeElement.nodeName.match("INPUT|TEXTAREA")
   )
     return;
   emits("next");
-});
-const datamodel = ref({ title: "", description: "", year: "" });
+}
+
+function save() {
+  console.log("save datamodel", JSON.parse(JSON.stringify(datamodel.value)));
+}
+
+const datamodel = ref<any>({});
 watch(model, resetData);
 function resetData() {
   const d = metadata.find((x) => x.url === model.value);
   if (d) {
-    datamodel.value.title = d.title;
-    datamodel.value.description = d.description;
-    datamodel.value.year = d.year;
+    for (let i in config.value._media_metadata.fields) {
+      // fill datamodel with field
+      datamodel.value[i] = d[i] || "";
+    }
   }
+  // populate bucketfile
   const bf = bucketfiles.find((x) => x.Key === model.value);
-  console.log("BUCKETFILE", model.value);
   if (bf) {
     bucketfile.value = bf;
   }

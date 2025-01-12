@@ -1,16 +1,28 @@
 <template>
   <div
-    class="group relative aspect-square cursor-pointer overflow-hidden text-fg"
+    class="group relative aspect-square cursor-pointer select-none overflow-hidden text-fg"
     ref="el"
   >
     <div :class="{ invisible: !isVisible }">
       <!-- preview/icon -->
       <div v-if="props.file.type === 'image'">
-        <img
-          loading="lazy"
-          :src="`https://cathie.twic.pics/${props.file.Key}?twic=v1/cover=200x200`"
-          class="h-full w-full object-cover"
-        />
+        <picture class="pointer-events-none h-full w-full object-cover">
+          <img
+            loading="lazy"
+            :src="`//wsrv.nl/?url=cathie.lon1.digitaloceanspaces.com/${props.file.Key.replace(
+              /^\//,
+              '',
+            )}&w=300&h=300&fit=cover`"
+          />
+          <img
+            :srcset="`//wsrv.nl/?url=cathie.lon1.digitaloceanspaces.com/${props.file.Key.replace(
+              /^\//,
+              '',
+            )}&w=8&h=8&fit=cover`"
+            type="image/jpeg"
+            class="h-full w-full object-cover blur-md"
+          />
+        </picture>
       </div>
       <div v-else-if="props.file.type === 'video'">
         <div

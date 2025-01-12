@@ -7,7 +7,7 @@
         @keydown.meta.s.prevent="save"
         @keydown.meta.r.prevent="refresh"
         v-model="data.data"
-        v-if="data.data"
+        v-if="data?.data"
       ></textarea>
     </div>
   </div>
@@ -15,5 +15,6 @@
 
 <script lang="ts" setup>
 const model = ref("Model");
-const { data, loading, refresh, save } = useDataModel();
+const { data, status, refresh, save } = useDataModel();
 </script>
+2

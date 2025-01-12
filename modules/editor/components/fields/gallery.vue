@@ -23,13 +23,6 @@
         ></EditFileBrowser>
       </div>
     </transition>
-    <!-- add button -->
-    <button
-      class="mb-2 rounded border border-bc bg-bg1 px-8 py-2 hover:bg-bg2"
-      @click="browse = true"
-    >
-      Add an image
-    </button>
     <!-- the items -->
     <draggable
       v-model="model"
@@ -39,27 +32,40 @@
     >
       <template #item="{ element }">
         <div
-          class="group relative flex aspect-square cursor-move items-center gap-2 rounded border border-bc"
+          class="group relative flex aspect-square cursor-move select-none items-center gap-2 rounded border border-bc"
           @click.stop
         >
-          <button
-            class="absolute right-0 top-0 m-2 rounded bg-bg text-2xl text-fg opacity-0 hover:text-f group-hover:opacity-100"
-            @click="model.splice(model.indexOf(element), 1)"
+          <!-- hover buttons -->
+          <div
+            class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 z-20 rounded bg-black/50 bg-opacity-30 text-2xl text-fg opacity-0 transition hover:text-f group-hover:opacity-100"
           >
-            <Icon icon="gg:close-o"></Icon>
-          </button>
-          <button
-            class="absolute bottom-0 left-0 m-2 rounded bg-bg text-2xl text-fg opacity-0 hover:text-f group-hover:opacity-100"
-            @click="editing = element"
-          >
-            <Icon icon="mingcute:edit-fill"></Icon>
-          </button>
+            <button
+              class="pointer-events-auto float-right m-2 rounded text-2xl text-fg hover:text-f"
+              @click="model.splice(model.indexOf(element), 1)"
+            >
+              <Icon icon="material-symbols:close-rounded"></Icon>
+            </button>
+          </div>
+          <!-- image -->
           <img
             loading="lazy"
-            :src="`https://cathie.twic.pics/${element.replace(/^\//, '')}?twic=v1/cover=200x200`"
-            class="h-full w-full object-cover"
+            :key="element"
+            :src="`//wsrv.nl/?url=cathie.lon1.digitaloceanspaces.com/${element.replace(
+              /^\//,
+              '',
+            )}&w=400&h=400`"
+            @click.stop="editing = element"
+            class="h-full w-full rounded object-cover"
           />
         </div>
+      </template>
+      <template #footer>
+        <button
+          @click="browse = true"
+          class="rounded border border-bc text-3xl text-fg2 hover:bg-bg2 hover:text-fg"
+        >
+          +
+        </button>
       </template>
     </draggable>
   </div>
