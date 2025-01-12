@@ -63,6 +63,23 @@ async function save() {
     });
 }
 
+async function saveMetadata(metadata: { path: string; data: any }) {
+  const route = useRoute();
+  fetch(`/api/save-metadata`, {
+    method: "POST",
+    body: JSON.stringify(metadata),
+  })
+    .then(() => {
+      // todo: message
+      // alert("saved");
+      // refresh();
+    })
+    .catch((err) => {
+      alert("error!");
+      console.warn(err);
+    });
+}
+
 const changed = computed(() => {
   if (!data?.value || !dataOriginal) return false;
   return JSON.stringify(data.value) !== dataOriginal;
@@ -88,5 +105,6 @@ export const useDataModel = () => {
     refreshConfig,
     save,
     saving,
+    saveMetadata,
   };
 };

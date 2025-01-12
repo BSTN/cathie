@@ -106,7 +106,7 @@ import metadata from "@/data/metadata.yml";
 import bucketfiles from "@/data/bucketfiles.json";
 import { Icon } from "@iconify/vue";
 import { onKeyStroke } from "@vueuse/core";
-const { config, configStatus } = useDataModel();
+const { config, configStatus, saveMetadata } = useDataModel();
 const emits = defineEmits(["next", "prev"]);
 const model = defineModel<string>();
 const bucketfile = ref({});
@@ -129,14 +129,17 @@ function next() {
   emits("next");
 }
 
-function save() {
-  console.log("save datamodel", JSON.parse(JSON.stringify(datamodel.value)));
+async function save() {
+  console.log("save", model.value);
+  if (!model.value) return;
+  await saveMetadata({ path: model.value, data: datamodel.value });
+  // console.log("save datamodel", JSON.parse(JSON.stringify(datamodel.value)));
 }
 
 const datamodel = ref<any>({});
 watch(model, resetData);
 function resetData() {
-  const d = metadata.find((x) => x.url === model.value);
+  const d = metadata.find((x) => x.path === model.value);
   if (d) {
     for (let i in config.value._media_metadata.fields) {
       // fill datamodel with field

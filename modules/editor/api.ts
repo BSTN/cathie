@@ -130,6 +130,29 @@ export default defineEventHandler(async (event) => {
     setResponseStatus(event, 404);
     return { error: "No path provided" };
   }
+
+  if (name === "save-metadata") {
+    const body = JSON.parse(await readBody(event));
+    if (!body.path || !body.data) {
+      setResponseStatus(event, 404);
+      return { error: "No path or data provided" };
+    }
+    const metadataRaw = fs.readFileSync(resolve("./data/metadata.yml"), "utf8");
+    const metadata = yaml.parse(metadataRaw);
+    const foundIndex = metadata.findIndex((x) => {
+      return x.path === body.path;
+    });
+    if (foundIndex > -1) {
+      metadata[foundIndex] = Object.assign(body.data, { path: body.path });
+    } else {
+      metadata.push(Object.assign(body.data, { path: body.path }));
+    }
+    fs.writeFileSync(resolve("./data/metadata.yml"), yaml.stringify(metadata));
+    return {
+      success: true,
+    };
+  }
+
   if (name === "config") {
     const config = await getConfig();
     return config;
