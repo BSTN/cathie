@@ -35,6 +35,7 @@ export default defineNuxtModule({
       from: resolve("./editor/usedatamodel.ts"),
     });
     addPlugin(resolve("./editor/globalkeys.ts"));
+    addPlugin(resolve("./editor/img.ts"));
     addServerHandler({
       route: "/api/:path",
       handler: resolve("./editor/api.ts"),

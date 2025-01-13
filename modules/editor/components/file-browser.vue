@@ -1,6 +1,14 @@
 <template>
   <div
     class="file-browser fixed bottom-0 left-0 right-0 top-0 z-50 overflow-auto bg-bg1 p-0"
+    v-globalkeys="{
+      Escape: () => emit('cancel'),
+      Enter: () => emit('done', selected),
+      'k.meta': () => {
+        searchElement.focus();
+        searchElement.select();
+      },
+    }"
   >
     <!-- editor -->
     <transition name="fade">
@@ -59,7 +67,7 @@
         Done
       </button>
       <button class="text-2xl text-fg2 hover:text-fg" @click="refreshIndex">
-        <Icon icon="material-symbols:refresh"></Icon>
+        <Icon name="material-symbols:refresh"></Icon>
       </button>
     </div>
     <div class="bg-bg p-8">
@@ -83,10 +91,14 @@
             :class="{ 'opacity-100': selected.includes(file.Key) }"
           >
             <Icon
-              icon="mdi:checkbox-blank"
+              name="material-symbols:add-box-rounded"
               v-if="!selected.includes(file.Key)"
             ></Icon>
-            <Icon icon="mdi:checkbox-marked" class="text-f" v-else></Icon>
+            <Icon
+              name="material-symbols:check-box"
+              class="text-f"
+              v-else
+            ></Icon>
           </button>
           <!-- file: preview -->
           <EditFilePreview
@@ -141,15 +153,7 @@ function openPrev() {
   editing.value =
     filteredFiles.value[nowindex - 1].Key || filteredFiles.value[0].Key;
 }
-onKeyStroke("Escape", () => {
-  if (editing.value) {
-    return;
-  }
-  emit("cancel");
-});
-onKeyStroke("Enter", () => {
-  emit("done", selected.value);
-});
+
 onKeyStroke("k", (ev) => {
   if (ev.metaKey && searchElement.value) {
     ev.preventDefault();

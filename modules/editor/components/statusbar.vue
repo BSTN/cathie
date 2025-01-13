@@ -23,7 +23,7 @@
     </button>
     <transition name="fade"
       ><div class="" v-if="status === 'pending'">
-        <Icon icon="eos-icons:three-dots-loading"></Icon></div
+        <Icon name="eos-icons:three-dots-loading"></Icon></div
     ></transition>
     <transition name="fade"
       ><div class="" v-if="saving">saving...</div></transition

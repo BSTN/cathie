@@ -25,7 +25,7 @@
             :to="`/edit/${element.path}`"
             class="flex cursor-pointer items-center gap-3 border-b border-solid border-bc px-4 py-3 no-underline last:border-0 hover:underline"
           >
-            <Icon icon="fluent:document-20-filled" class="text-fg2"></Icon>
+            <Icon name="fluent:document-20-filled" class="text-fg2"></Icon>
             <div>{{ element.name?.split(".").shift() }}</div>
           </NuxtLink>
         </template>

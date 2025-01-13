@@ -1,9 +1,9 @@
 about:
   type: markdown
-  icon: f7:doc-fill
+  icon: material-symbols:docs
 contact:
   type: markdown
-  icon: f7:doc-fill
+  icon: material-symbols:docs
 projects:
   icon: simple-line-icons:docs
   type: folder
@@ -13,6 +13,7 @@ projects:
       type: text
       label: "Title"
     description: markdown
+    thumb: image
     images: gallery
 media:
   type: filebrowser

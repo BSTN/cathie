@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@nuxtjs/tailwindcss",
     "@nuxt/fonts",
+    "@nuxt/icon",
   ],
 
   site: {

@@ -62,19 +62,19 @@
         <button
           class="rounded border border-solid border-bg1 p-1 px-3 text-fg hover:bg-bg2"
         >
-          <Icon icon="tabler:arrow-left" @click="emits('prev')"></Icon>
+          <Icon name="tabler:arrow-left" @click="emits('prev')"></Icon>
         </button>
         <button
           class="rounded border border-solid border-bg1 p-1 px-3 text-fg hover:bg-bg2"
           @click="emits('next')"
         >
-          <Icon icon="tabler:arrow-right"></Icon>
+          <Icon name="tabler:arrow-right"></Icon>
         </button>
         <button
           class="rounded border border-solid border-bg1 p-1 px-3 text-fg hover:bg-bg2"
           @click="model = ''"
         >
-          <Icon icon="ic:baseline-close"></Icon>
+          <Icon name="ic:baseline-close"></Icon>
         </button>
       </div>
 

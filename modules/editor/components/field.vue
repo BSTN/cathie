@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label class="text-bold mb-2 block text-sm capitalize text-fg2">{{
+    <label class="font-black mb-2 block text-sm capitalize text-fg2">{{
       label
     }}</label>
     <component
@@ -17,10 +17,12 @@ import {
   EditFieldsText,
   EditFieldsDate,
   EditFieldsMarkdown,
+  EditFieldsImage,
   EditFieldsGallery,
 } from "#components";
 const componentMap = {
   text: EditFieldsText,
+  image: EditFieldsImage,
   date: EditFieldsDate,
   markdown: EditFieldsMarkdown,
   gallery: EditFieldsGallery,

@@ -28,14 +28,14 @@
         <div
           class="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center text-6xl text-fg2"
         >
-          <Icon icon="lets-icons:video-fill"></Icon>
+          <Icon name="lets-icons:video-fill"></Icon>
         </div>
       </div>
       <div v-else-if="props.file.type === 'pdf'">
         <div
           class="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center text-6xl text-fg2"
         >
-          <Icon icon="bxs:file-pdf"></Icon>
+          <Icon name="bxs:file-pdf"></Icon>
           <div
             class="absolute bottom-0 w-full whitespace-break-spaces break-all p-2 text-xs text-fg2"
           >

@@ -2,7 +2,7 @@
   <ClientOnly>
     <div
       ref="el"
-      class="edit-page tracking-extra fixed bottom-0 left-0 right-0 top-0 z-[99] flex flex-row items-stretch bg-bg p-0 text-fg"
+      class="edit-page fixed bottom-0 left-0 right-0 top-0 z-[99] flex flex-row items-stretch bg-bg p-0 tracking-extra text-fg"
       v-if="configStatus === 'success'"
     >
       <div
@@ -14,7 +14,7 @@
           class="mb-1 flex items-center gap-3 rounded-md px-3 py-2 capitalize !no-underline hover:bg-bg1"
           :class="[$route.path.startsWith(`/edit/${name}`) ? 'bg-bg1' : '']"
         >
-          <Icon :icon="content.icon" class="text-fg2"></Icon>
+          <icon :name="content.icon" class="text-fg2"></icon>
           <div class="name grow">
             {{ name }}
           </div>

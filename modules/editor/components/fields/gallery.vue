@@ -43,7 +43,7 @@
               class="pointer-events-auto float-right m-2 rounded text-2xl text-fg hover:text-f"
               @click="model.splice(model.indexOf(element), 1)"
             >
-              <Icon icon="material-symbols:close-rounded"></Icon>
+              <Icon name="material-symbols:close-rounded"></Icon>
             </button>
           </div>
           <!-- image -->
