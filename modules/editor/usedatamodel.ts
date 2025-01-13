@@ -17,14 +17,36 @@ async function refresh(donotforce?: boolean) {
   status.value = "pending";
   await $fetch(`/api/get?path=${route.params.path.join("/")}`)
     .then((res) => {
-      data.value = res;
-      dataOriginal = JSON.stringify(res);
+      // merge with default
+      if ("empty" in config.value[route.params.path[0]]) {
+        console.log(
+          "merge with default",
+          JSON.stringify(config.value[route.params.path[0]].empty),
+        );
+        data.value.data = Object.assign(
+          cloneDeep(config.value[route.params.path[0]].empty),
+          res.data,
+        );
+      } else {
+        data.value = res;
+      }
+      dataOriginal = JSON.stringify(data.value);
       status.value = "success";
     })
     .catch((err) => {
       status.value = "error";
       console.warn(err);
     });
+}
+
+async function createFile(path: string, name: string) {
+  await fetch(`/api/create-file`, {
+    method: "POST",
+    body: JSON.stringify({
+      path,
+      name,
+    }),
+  });
 }
 
 async function refreshConfig(donotforce?: boolean) {
@@ -86,9 +108,32 @@ async function getMetadata(path: string) {
     body: JSON.stringify({ path }),
   })
     .then((res) => res.json())
-    .then((res) => res)
     .catch((err) => {
       alert("error!");
+      console.warn(err);
+    });
+}
+
+async function getFolder(path: string) {
+  console.log(JSON.stringify({ path }));
+  return await fetch(`/api/get-folder`, {
+    method: "POST",
+    body: JSON.stringify({ path }),
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      // alert("error!");
+      console.warn(err);
+    });
+}
+async function saveFolderOrder(path: string, filelist: string[]) {
+  return await fetch(`/api/save-folder-order`, {
+    method: "POST",
+    body: JSON.stringify({ path, filelist }),
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      // alert("error!");
       console.warn(err);
     });
 }
@@ -102,8 +147,9 @@ export const useDataModel = () => {
   const route = useRoute();
 
   // get data
-  refresh(true);
-  refreshConfig(true);
+  refreshConfig(true).then(() => {
+    refresh(true);
+  });
 
   // watch path change
   watch(() => route.path, refresh);
@@ -120,5 +166,8 @@ export const useDataModel = () => {
     saving,
     saveMetadata,
     getMetadata,
+    getFolder,
+    saveFolderOrder,
+    createFile,
   };
 };

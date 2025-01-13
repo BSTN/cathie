@@ -26,7 +26,7 @@
       </div>
       <div v-else-if="props.file.type === 'video'">
         <div
-          class="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center text-6xl text-fg2"
+          class="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center text-6xl leading-[0] text-fg2"
         >
           <Icon name="lets-icons:video-fill"></Icon>
         </div>
@@ -49,7 +49,7 @@
           class="flexjustify-center absolute bottom-0 left-0 right-0 top-0 items-center text-6xl text-fg2"
         >
           <Icon
-            icon="material-symbols:folder"
+            name="material-symbols:folder"
             class="inline-block h-4 w-4 text-fg"
           />
         </div>
@@ -60,7 +60,6 @@
 
 <script lang="ts" setup>
 import { useElementVisibility } from "@vueuse/core";
-import { Icon } from "@iconify/vue";
 const el = ref(null);
 const isVisible = useElementVisibility(el);
 const props = defineProps(["file"]);

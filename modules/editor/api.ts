@@ -5,6 +5,9 @@ import { s3Client } from "./s3client";
 import { ListObjectsV2Command } from "@aws-sdk/client-s3";
 import yaml from "yaml";
 import { getConfig } from "./editor-utils";
+import path from "path";
+import orderBy from "lodash/orderBy";
+import indexOf from "lodash/indexOf";
 
 function readableFileSize(attachmentSize: number) {
   const DEFAULT_SIZE = 0;
@@ -77,6 +80,10 @@ export default defineEventHandler(async (event) => {
   if (name === "get") {
     const query = getQuery(event);
     const p = query.path;
+    if (!p) {
+      setResponseStatus(event, 404);
+      error: "No path provided.";
+    }
     const psplit = p.split("/");
     if (psplit.length > 1) {
       const filepath = resolve("./data/", p);
@@ -163,6 +170,44 @@ export default defineEventHandler(async (event) => {
         return x.path === body.path;
       }) || {}
     );
+  }
+
+  if (name === "get-folder") {
+    const body = JSON.parse(await readBody(event));
+    const p = body.path;
+    const filesList = fs.readdirSync(resolve("./data/" + p));
+    const order: string[] = [];
+    const files = Object.values(filesList).filter((x) => !x.startsWith("."));
+    if (fs.existsSync(resolve("./data/", p, ".sort.yml"))) {
+      const orderfile = fs.readFileSync(
+        resolve("./data/", p, ".sort.yml"),
+        "utf8",
+      );
+      order.push(...yaml.parse(orderfile));
+    }
+    function sortByReferenceArray(toSort: string[], order: string[]) {
+      return orderBy(toSort, (item: string) => indexOf(order, item), "asc");
+    }
+    return sortByReferenceArray(files, order);
+  }
+
+  if (name === "save-folder-order") {
+    const body = JSON.parse(await readBody(event));
+    const p = body.path;
+    const filelist = body.filelist;
+    const orderpath = resolve("./data/", p, ".sort.yml");
+    const data = yaml.stringify(filelist);
+    fs.writeFileSync(orderpath, data, "utf8");
+    return { message: "success" };
+  }
+
+  if (name === "create-file") {
+    const body = JSON.parse(await readBody(event));
+    const p = body.path;
+    const name = body.name;
+    const filepath = resolve("./data/", p, name);
+    fs.writeFileSync(filepath, "", "utf8");
+    return { success: true };
   }
 
   if (name === "config") {

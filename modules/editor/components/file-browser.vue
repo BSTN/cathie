@@ -66,7 +66,10 @@
       >
         Done
       </button>
-      <button class="text-2xl text-fg2 hover:text-fg" @click="refreshIndex">
+      <button
+        class="text-2xl leading-[0] text-fg2 hover:text-fg"
+        @click="refreshIndex"
+      >
         <Icon name="material-symbols:refresh"></Icon>
       </button>
     </div>
@@ -86,7 +89,7 @@
           ></div>
           <!-- file: select button -->
           <button
-            class="absolute left-0 top-0 z-20 m-2 rounded bg-bg text-3xl text-fg opacity-0 outline-2 outline-fg transition group-hover:opacity-100"
+            class="absolute left-0 top-0 z-20 m-2 rounded text-3xl leading-[0] text-fg opacity-0 outline-2 outline-fg transition group-hover:opacity-100"
             @click.exact="toggleSelected(file.Key)"
             :class="{ 'opacity-100': selected.includes(file.Key) }"
           >
@@ -113,7 +116,6 @@
 </template>
 
 <script lang="ts" setup>
-import { Icon } from "@iconify/vue";
 import { onKeyStroke } from "@vueuse/core";
 const searchElement = ref<HTMLInputElement | null>(null);
 const ALLFILES = useFiles();

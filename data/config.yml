@@ -8,6 +8,11 @@ projects:
   icon: simple-line-icons:docs
   type: folder
   sortable: true
+  empty:
+    title: ""
+    description: ""
+    thumb: ""
+    images: []
   fields:
     title:
       type: text

@@ -16,6 +16,7 @@
       class="absolute"
       :src="$img(model, { w: 400, h: 400, fit: 'contain' })"
       loading="lazy"
+      v-if="model"
     />
   </div>
 </template>

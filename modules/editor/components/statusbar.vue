@@ -22,7 +22,7 @@
       Undo
     </button>
     <transition name="fade"
-      ><div class="" v-if="status === 'pending'">
+      ><div class="leading-[0]" v-if="status === 'pending'">
         <Icon name="eos-icons:three-dots-loading"></Icon></div
     ></transition>
     <transition name="fade"

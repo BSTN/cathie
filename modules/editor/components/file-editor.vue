@@ -47,31 +47,32 @@
       <!-- buttons -->
       <div class="mb-4 flex gap-1">
         <button
-          class="rounded border border-solid border-bg1 p-1 px-3 text-sm text-fg hover:bg-bg2"
+          class="rounded border border-solid border-bg1 p-1 px-3 text-sm"
           @click="save"
+          :class="changed ? 'bg-fg text-bg2 hover:bg-f' : 'text-fg2'"
         >
           save
         </button>
         <button
-          class="rounded border border-solid border-bg1 p-1 px-3 text-sm text-fg hover:bg-bg2"
+          class="rounded border border-solid border-bg1 p-1 px-3 text-sm text-fg2 hover:bg-bg2 hover:text-fg"
           @click="resetData()"
         >
           undo
         </button>
         <div class="grow"></div>
         <button
-          class="rounded border border-solid border-bg1 p-1 px-3 text-fg hover:bg-bg2"
+          class="rounded border border-solid border-bg1 p-1 px-3 leading-[0] text-fg hover:bg-bg2"
         >
           <Icon name="tabler:arrow-left" @click="emits('prev')"></Icon>
         </button>
         <button
-          class="rounded border border-solid border-bg1 p-1 px-3 text-fg hover:bg-bg2"
+          class="rounded border border-solid border-bg1 p-1 px-3 leading-[0] text-fg hover:bg-bg2"
           @click="emits('next')"
         >
           <Icon name="tabler:arrow-right"></Icon>
         </button>
         <button
-          class="rounded border border-solid border-bg1 p-1 px-3 text-fg hover:bg-bg2"
+          class="rounded border border-solid border-bg1 p-1 px-3 leading-[0] text-fg hover:bg-bg2"
           @click="model = ''"
         >
           <Icon name="ic:baseline-close"></Icon>
@@ -104,13 +105,14 @@
 </template>
 
 <script lang="ts" setup>
+import cloneDeep from "lodash/cloneDeep";
 import bucketfiles from "@/data/bucketfiles.json";
-import { Icon } from "@iconify/vue";
 const { config, configStatus, saveMetadata, getMetadata } = useDataModel();
 const emits = defineEmits(["next", "prev"]);
 const model = defineModel<string>();
 const bucketfile = ref({});
 const el = ref(null);
+let originalDatamodel = ref("");
 
 function prev() {
   if (
@@ -132,7 +134,7 @@ function next() {
 async function save() {
   if (!model.value) return;
   await saveMetadata({ path: model.value, data: datamodel.value });
-  console.log("done", model.value);
+  resetData();
 }
 
 const datamodel = ref<any>({});
@@ -143,12 +145,18 @@ async function resetData() {
     // fill datamodel with field
     datamodel.value[i] = d && i in d ? d[i] : "";
   }
+  originalDatamodel.value = JSON.stringify(cloneDeep(datamodel.value));
   // populate bucketfile
   const bf = bucketfiles.find((x) => x.Key === model.value);
   if (bf) {
     bucketfile.value = bf;
   }
 }
+
+const changed = computed(() => {
+  if (!datamodel.value || !originalDatamodel) return false;
+  return JSON.stringify(datamodel.value) !== originalDatamodel.value;
+});
 onMounted(() => {
   resetData();
 });

@@ -27,4 +27,9 @@ const configModel = computed(() => {
     return false;
   }
 });
+
+const layout = computed(() => {
+  if (!configModel.value?.layout) return false;
+  return configModel.value.layout;
+});
 </script>
